@@ -1,5 +1,5 @@
-import {SketchCanvas} from '@IntelexTechnologies/react-native-sketch-canvas';
-import { useRef } from 'react';
+import {SketchCanvas} from '@karthiktrcapgemini/react-native-sketch-canvas';
+import {useRef} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 function App(): JSX.Element {
@@ -9,12 +9,14 @@ function App(): JSX.Element {
     <View style={styles.container}>
       <View style={{flex: 1, flexDirection: 'row'}}>
         <SketchCanvas
-          ref={(ref) => { sketchRef = ref; }}
+          ref={ref => {
+            sketchRef = ref;
+          }}
           style={{flex: 1}}
           strokeColor={'red'}
           strokeWidth={7}
           onStrokeEnd={() => {
-            console.log(sketchRef.getBase64('png', true, true, true, true, () => {}));
+              sketchRef.getBase64('png', true, true, true, true, () => {})
           }}
         />
       </View>
