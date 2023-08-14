@@ -16,7 +16,10 @@ function App(): JSX.Element {
           strokeColor={'red'}
           strokeWidth={7}
           onStrokeEnd={() => {
-              sketchRef.getBase64('png', true, true, true, true, () => {})
+              sketchRef.getBase64('png', true, true, true, true, (error, result) => {
+                console.log(`Result base64 ${result}`);
+                console.log(`error base64 ${error}`)
+              })
           }}
         />
       </View>
